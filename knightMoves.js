@@ -19,6 +19,10 @@ export function knightMoves(start, end) {
     return "Invalid start or end position!";
   }
 
+  if (start[0] === end[0] && start[1] === end[1]) {
+    return "You're already there! Horses held!";
+  }
+
   const queue = [[start]]; // simulating a queue for BFS
   const visited = new Set(); // keep track of visited positions
   visited.add(start.toString());
